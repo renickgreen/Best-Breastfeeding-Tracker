@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Edit Page"
+             Shell.PresentationMode="Modal"
+             xmlns:vm="clr-namespace:Best_Breastfeeding_Tracker.ViewModels"
+             x:Class="Best_Breastfeeding_Tracker.Views.EditPage">
+    <ContentPage.BindingContext>
+        <vm:EditPageModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Picker SelectedItem="{Binding Breast}">
+                <Picker.Items>
+                    <x:String>Left</x:String>
+                    <x:String>Right</x:String>
+                    <x:String>Both</x:String>
+                    <x:String>Pee</x:String>
+                    <x:String>Poop</x:String>
+                    <x:String>Pee and Poop</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label Text="Duration (in minutes)"/>
+            <Entry Text="{Binding TimeFed}" Keyboard="Numeric"/>
+            <Label Text="Date"/>
+            <DatePicker Date="{Binding Date}"/>
+            <Label Text="Time"/>
+            <TimePicker Time="{Binding Time}"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Save" Command="{Binding SaveCommand}" BackgroundColor="Green"/>
+                <Button Text="Delete" Command="{Binding DeleteCommand}" BackgroundColor="Red"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

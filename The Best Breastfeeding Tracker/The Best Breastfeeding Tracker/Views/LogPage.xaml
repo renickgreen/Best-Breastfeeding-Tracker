@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:The_Best_Breastfeeding_Tracker.ViewModels"
+             xmlns:models="clr-namespace:The_Best_Breastfeeding_Tracker.Models"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:xt="http://xamarin.com/schemas/2020/toolkit"
+             Title="Log Page"
+             x:Name="this"
+             x:Class="The_Best_Breastfeeding_Tracker.Views.LogPage">
+    <ContentPage.BindingContext>
+        <views:LogPageModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <xt:ItemSelectedEventArgsConverter x:Key="ItemSelectedEventArgsConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Behaviors>
+        <xct:EventToCommandBehavior
+            EventName="Appearing"
+            Command="{Binding AppearingCommand}"/>
+    </ContentPage.Behaviors>
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ListView ItemsSource="{Binding Records}" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" Grid.ColumnSpan="4" SelectionMode="Single">
+                <ListView.Behaviors>
+                    <xt:EventToCommandBehavior
+                        EventName="ItemSelected"
+                        Command="{Binding SelectCommand}"
+                        EventArgsConverter="{StaticResource ItemSelectedEventArgsConverter}"
+                        />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                
+                            </ViewCell.ContextActions>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal" BackgroundColor="{Binding ColorCode}">
+
+                                    <Label Padding="10" Text="{Binding Breast}" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                    <Label Text="{Binding Minutes}" HorizontalOptions="CenterAndExpand" 
+                                           FontAttributes="Bold" VerticalOptions="Center"/>
+                                    <Label Padding="10" Text="{Binding Date, StringFormat='{}{0:MMMM d, yy h:mm tt}'}" HorizontalOptions="End" VerticalOptions="Center"/>
+
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Select" Command="{Binding SelectBreastCommand}" Grid.Row="1"/>
+            <Label Text="{Binding BreastText}" Grid.Row="1" Grid.Column="1" 
+                   FontSize="Medium"
+                   VerticalTextAlignment="Center" 
+                   HorizontalTextAlignment="Center"/>
+            <Entry Placeholder="Enter Time Fed" Keyboard="Numeric" Text="{Binding TimeFed}"
+                        Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" IsEnabled="{Binding WasFed}" />
+
+            <Button Text="Was Fed" Command="{Binding WasFedCommand}" IsEnabled="{Binding HadDiaperChange}" 
+                        Grid.Row="2" Grid.ColumnSpan="2"/>
+            <Button Text="Changed Diaper" Command="{Binding HadDiaperChangeCommand}" 
+                        IsEnabled="{Binding WasFed}" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"/>
+            <Button Text="Save" Command="{Binding SaveFeedingCommand}" Grid.Row="3" Grid.ColumnSpan="4"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

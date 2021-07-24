@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Best Breastfeeding Tracker.Android", "The Best Breastfeeding Tracker\The Best Breastfeeding Tracker.Android\Best Breastfeeding Tracker.Android.csproj", "{EE82CF09-7433-49CC-B795-27820593695F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Best Breastfeeding Tracker", "The Best Breastfeeding Tracker\The Best Breastfeeding Tracker\Best Breastfeeding Tracker.csproj", "{4A1A4AC7-D3A2-43BD-ABE9-FE8C4EE119BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE82CF09-7433-49CC-B795-27820593695F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE82CF09-7433-49CC-B795-27820593695F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE82CF09-7433-49CC-B795-27820593695F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EE82CF09-7433-49CC-B795-27820593695F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE82CF09-7433-49CC-B795-27820593695F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE82CF09-7433-49CC-B795-27820593695F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4A1A4AC7-D3A2-43BD-ABE9-FE8C4EE119BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A1A4AC7-D3A2-43BD-ABE9-FE8C4EE119BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A1A4AC7-D3A2-43BD-ABE9-FE8C4EE119BE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4A1A4AC7-D3A2-43BD-ABE9-FE8C4EE119BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A1A4AC7-D3A2-43BD-ABE9-FE8C4EE119BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A1A4AC7-D3A2-43BD-ABE9-FE8C4EE119BE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B347FDEB-A455-43C3-B12E-91C43DA2BEE1}
+	EndGlobalSection
+EndGlobal
